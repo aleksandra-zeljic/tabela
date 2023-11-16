@@ -1,0 +1,18 @@
+main{
+    font-family: sans-serif;
+}
+
+table, tr, td{
+    border: solid black 1px;
+    border-collapse: collapse;
+}
+
+.center {
+    margin: auto;
+}
+
+#tabelala{
+    /* border: solid black 1px; */
+    border-collapse: collapse;
+    text-align: center;
+}
