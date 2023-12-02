@@ -34,7 +34,7 @@ let data = [
             "price": "30000",
             "year": "2018",
             "body": "Sedan",
-            "fuel": "Diesel",
+            "fuel": "Diesel"
         }
     ]
     
@@ -53,10 +53,15 @@ var tabelala = document.getElementById('tabelala')
 tabelala.appendChild(tabela);
 tabelaOdNiza();
 
+// function test(id) {
+//     console.log(id)
+// }
+
 
 function tabelaOdNiza(){
     tabela.innerHTML = "";
     for (var i = 0; i < data.length; i++){
+
         var tr = document.createElement('tr');   
 
         var td1 = document.createElement('td');
@@ -66,6 +71,7 @@ function tabelaOdNiza(){
         var td5 = document.createElement('td');
         var td6 = document.createElement('td');
         var td7 = document.createElement('td');
+        var td8 = document.createElement('td');
 
         var text1 = document.createTextNode(data[i].id);
         var text2 = document.createTextNode(data[i].make);
@@ -74,6 +80,16 @@ function tabelaOdNiza(){
         var text5 = document.createTextNode(data[i].year);
         var text6 = document.createTextNode(data[i].body);
         var text7 = document.createTextNode(data[i].fuel);
+        var btn   = document.createElement('input');
+        btn.type  = "button";
+        btn.value = "delete";
+
+        const x = i;
+
+        btn.addEventListener('click', function() {
+            data.splice(x, 1);
+            tabelaOdNiza();
+        })
 
         td1.appendChild(text1);     tr.appendChild(td1);
         td2.appendChild(text2);     tr.appendChild(td2);
@@ -82,6 +98,7 @@ function tabelaOdNiza(){
         td5.appendChild(text5);     tr.appendChild(td5);
         td6.appendChild(text6);     tr.appendChild(td6);
         td7.appendChild(text7);     tr.appendChild(td7);
+        td8.appendChild(btn);       tr.appendChild(td8);
         
         tabela.appendChild(tr);
     }
@@ -104,3 +121,4 @@ f.addEventListener('click', function(){
     tabelaOdNiza();
 
 })
+
